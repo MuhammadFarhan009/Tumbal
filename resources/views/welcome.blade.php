@@ -61,37 +61,40 @@
                 </div>
                 <div class="px-10 mb-6">
                     {{-- <label for="email" class="block mx-2 mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label> --}}
-                    <input type="email" id="email" name="nama"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Nama Mahasiswa" required>
+                    <input type="text" list="mhs" placeholder="Nama " class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
                 </div>
                 <div class="px-10 mb-6">
+
                     {{-- <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label> --}}
-                    <input type="text" id="password" name="NIM"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="NIM" required>
+                    <input type="text" list="NIM" placeholder="NIM" name="NIM" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
                 </div>
                 <div class="px-10 mb-6">
-                    {{-- <label for="email" class="block mx-2 mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label> --}}
-                    <input type="text" id="email" name="dosen_1"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Dosen pembimbing 1" required>
+                        <input type="text" list="dosen" placeholder="Dosen Pembimbing 1 " class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
                 </div>
                 <div class="px-10 mb-6">
-                    {{-- <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label> --}}
-                    <input type="text" id="passworkd" name="dosen_2"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Dosen pembimbing 2" required>
+                    <input type="text" list="dosen" placeholder="Dosen Pembimbing 2 " class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
                 </div>
 
                 <div class="px-10 mb-6">
-                    <input type="text" list="dosen" placeholder="Dosen Penguji " class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
+                    <input type="text" list="dosen" placeholder="Dosen Penguji " class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
                     <datalist id="dosen">
-                        <select>
-                            @foreach($data as $row)
-                              <option value="{{ $row->ID }}">{{ $row->nama }}</option>
+                        <select id="option" name="option">
+                            @foreach ($options as $ID => $Nama)
+                            <option value="{{ $Nama }}"></option>
                             @endforeach
                           </select>
+                    </datalist>
+                    <datalist id="mhs">
+                        <select name="mhs">
+                            @foreach ($mhs as $value)
+                              <option value="{{ $value }}"></option>
+                            @endforeach
+                          </select>
+                    </datalist>
+                    <datalist id="NIM">
+                        @foreach ($NIM as $value)
+                          <option value="{{ $value }}"></option>
+                        @endforeach
                     </datalist>
                 </div>
                 <div class="flex flex-col items-center justify-center">

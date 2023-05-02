@@ -11,9 +11,11 @@ class OptionController extends Controller
     public function index()
     {
         // Retrieve data from MySQL table
-        $options = DB::table('nama_dosen')->pluck('Nama', 'ID');
-
+        $options = DB::table('nama_dosen')->pluck('Nama')->toArray();
+        $NIM = DB::table('mhs')->pluck('NIM')->toArray();
+        $mhs = DB::table('mhs')->pluck('Nama')->toArray();
         // Return view with data
-        return view('index', ['options' => $options]);
+        return view('welcome', [  'options' => $options,  'NIM' => $NIM,  'mhs' => $mhs,]);
+
     }
 }

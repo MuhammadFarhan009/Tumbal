@@ -15,8 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Route::get('/', [home::class, 'HomeIndex']);
+// Route::get('/', [home::class, '']);
 // Route::get('/data', [home::class, 'DataIndex']);
 // Route::post('dataInsert', [home::class, 'DataInsert']);
-// Route::get('/options', 'OptionController@index');
-Route::get('/options', 'App\Http\Controllers\OptionController@index');
+// Route::get('/index', 'OptionController@index');
+Route::get('/welcome', 'App\Http\Controllers\OptionController@index');
 
